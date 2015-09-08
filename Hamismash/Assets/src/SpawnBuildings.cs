@@ -9,6 +9,7 @@ public class SpawnBuildings : MonoBehaviour {
 	void Start () {
 		for (int i = 0; i<10; i++) {
 			Instantiate(buildingPrefab, new Vector3(Random.Range(-20,20), 0, Random.Range(-20,20)), Quaternion.identity);
+			//Instantiate(buildingPrefab, new Vector3(Random.Range(-20,20), 0, Random.Range(-20,20)), new Quaternion(270, 0, 0, 1));
 		}
 	}
 	
