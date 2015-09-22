@@ -101,6 +101,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11ceff28b1d323a48a7ab462ac658c21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  peasantPrefab: {fileID: 166096, guid: 4effe0043129a074197e7226f1ba3073, type: 2}
   hp: 100
   destroyedMesh: {fileID: 4300000, guid: 17f198435ac717346b21525dff13a1fb, type: 3}
 --- !u!1001 &100100000
@@ -134,6 +135,10 @@ Prefab:
       propertyPath: m_Constraints
       value: 126
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: peasantPrefab
+      value: 
+      objectReference: {fileID: 166096, guid: 4effe0043129a074197e7226f1ba3073, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 160146}

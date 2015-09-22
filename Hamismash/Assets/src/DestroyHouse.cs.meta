@@ -1,10 +1,12 @@
 fileFormatVersion: 2
 guid: 11ceff28b1d323a48a7ab462ac658c21
-timeCreated: 1441733874
+timeCreated: 1442935833
 licenseType: Free
 MonoImporter:
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - peasantPrefab: {fileID: 166096, guid: 4effe0043129a074197e7226f1ba3073, type: 2}
+  - destroyedMesh: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
