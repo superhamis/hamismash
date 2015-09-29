@@ -30,7 +30,7 @@ public class DestroyHouse : MonoBehaviour
 		if (this.isDestroyed) {
 			return;
 		}
-		if (col.gameObject.name == "Capsule") {
+		if (col.gameObject.name == "Spider") {
 			this.isDestroyed = true;
 			destroyed();
 		}

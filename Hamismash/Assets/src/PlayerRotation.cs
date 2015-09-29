@@ -33,7 +33,7 @@ public class PlayerRotation : MonoBehaviour {
 		//mouse.position = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 		//transform.LookAt(targetObject.transform);
 		//transform.LookAt(Camera.main.ScreenToWorldPoint(Input.mousePosition));
-		transform.Rotate (0, 90, 90);
+		//transform.Rotate (0, 90, 90);
 	}
 
 	/*
