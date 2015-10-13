@@ -6,16 +6,26 @@ public class FleeFromHouse : MonoBehaviour {
 
 	private GameObject safe;
 	public int numberOfSafePoints = 7;
-	public float speed = 1.0f;
+	private SlowDownOnSplash speedBehaviour;
 
-	// Use this for initialization
 	void Start () {
-		int luku = ((int)Random.Range (0, numberOfSafePoints))+1;
-		safe = GameObject.Find ("SafeZone"+luku);
+		safe = chooseRandomSafeArea ();
+		speedBehaviour = this.gameObject.GetComponent<SlowDownOnSplash> ();
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		transform.position = Vector3.MoveTowards(transform.position, safe.transform.position, speed*Time.deltaTime);
+
+	void FixedUpdate () {
+		transform.position = Vector3.MoveTowards(transform.position, safe.transform.position, speedBehaviour.speed);
+	}
+
+	private GameObject chooseRandomSafeArea() {
+		int luku = ((int)Random.Range (0, numberOfSafePoints))+1;
+		return GameObject.Find ("SafeZone"+luku);
+	}
+
+	void OnTriggerEnter (Collider col)
+	{
+		if (col.gameObject.name.Contains ("SafeZone")) {
+			Object.Destroy(this.gameObject);
+		}
 	}
 }

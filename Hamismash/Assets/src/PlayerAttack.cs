@@ -18,7 +18,7 @@ public class PlayerAttack : MonoBehaviour {
 			coolDown--;
 		} else {
 			if (Input.GetKey(KeyCode.Space)) {
-				coolDown = 80;
+				coolDown = 60;
 				shootWeb();
 			}
 		}

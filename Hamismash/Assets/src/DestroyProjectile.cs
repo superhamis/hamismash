@@ -3,6 +3,8 @@ using System.Collections;
 
 public class DestroyProjectile : MonoBehaviour {
 
+	public GameObject splashPrefab;
+
 	// Use this for initialization
 	void Start () {
 	
@@ -14,6 +16,9 @@ public class DestroyProjectile : MonoBehaviour {
 	}
 
 	void OnCollisionEnter() {
+		Vector3 pos = transform.position;
+		pos.y = 0;
+		Instantiate (splashPrefab, pos, Quaternion.identity);
 		Object.Destroy(this.gameObject);
 	}
 

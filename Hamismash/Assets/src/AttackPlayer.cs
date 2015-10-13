@@ -4,13 +4,17 @@ using System.Collections;
 public class AttackPlayer : MonoBehaviour {
 
 	public GameObject player;
-	public float speed;
 	public float viewDistance;
 	public float attackDistance;
 
+	private PlayerState playerState;
+
+	private SlowDownOnSplash speedBehaviour;
+
 	// Use this for initialization
 	void Start () {
-		
+		playerState = PlayerState.Instance;
+		speedBehaviour = this.gameObject.GetComponent<SlowDownOnSplash> ();
 	}
 	
 	// Update is called once per frame
@@ -35,10 +39,12 @@ public class AttackPlayer : MonoBehaviour {
 	}
 
 	private void moveForward() {
-		transform.Translate (Vector3.forward*speed*Time.deltaTime);
+		transform.Translate (Vector3.forward*speedBehaviour.speed*Time.deltaTime);
 	}
 
 	private void attackPlayer() {
-
+		if (playerState.Health > 0) {
+			playerState.Health -= 1;
+		}
 	}
 }
