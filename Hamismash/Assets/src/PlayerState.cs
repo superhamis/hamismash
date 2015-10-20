@@ -11,11 +11,12 @@ public class PlayerState
 			{
 				instance = new PlayerState();
 			}
-			
 			return instance;
 		}
 	}
 	
 	public int Stamina { get; set; }
 	public int Health { get; set; }
+	public int Charge { get; set; }
+	public int CoolDown { get; set; }
 }

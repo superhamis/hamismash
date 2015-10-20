@@ -5,7 +5,6 @@ using System.Collections;
 public class StatusBar : MonoBehaviour {
 
 	public RectTransform filler;
-	public float healthPercentage;
 	public Text healthText;
 	private float backgroundWidth;
 	private PlayerState playerState;
@@ -22,7 +21,8 @@ public class StatusBar : MonoBehaviour {
 	void Update () {
 		filler.SetSizeWithCurrentAnchors (RectTransform.Axis.Horizontal, backgroundWidth * playerState.Health/100);
 		healthText.text = "Health: " + playerState.Health;
-		//filler.sizeDelta = new Vector2 (backgroundWidth * healthPercentage, filler.sizeDelta.y);
-		//filler.anchoredPosition = new Vector2 (38.2f, 0.0f);
+		if (playerState.Health < 1) {
+			Application.LoadLevel(0);
+		}
 	}
 }
